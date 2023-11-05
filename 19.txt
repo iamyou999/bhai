@@ -1,0 +1,23 @@
+chit 19
+
+CREATE TABLE emp(
+    Eno INT NOT NULL,
+    Ename VARCHJAR(50) NOT NULL,
+    Address VARCHAR(50) DEFAULT 'Nashik',
+    Joindate DATE,
+    PRIMARY KEY (Eno)
+);
+
+ALTER TABLE EMP
+ADD POST VARCHAR(50);
+
+INSERT INTO emp VALUES
+    (101,'John','Pune','20-07-2007','Manager'),
+    (102,'Manas','Mumbai','13-09-1989','Software Developer'),
+    (103, 'Alice Johnson', 'Pune', '2023-11-03', 'Engineer'),
+    (104, 'Bob Williams', 'Nashik', '2023-11-04', 'Coordinator');
+
+CREATE INDEX idx_Ename ON emp(Ename);
+
+CREATE VIEW employee_details AS
+SELECT Ename FROM emp;
